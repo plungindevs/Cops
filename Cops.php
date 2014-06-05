@@ -56,18 +56,21 @@ class Cops implements Plugin
       	 $this->api->console->run("give " . $target . "288 1 " . 
          $this->api->console->run("give " . $target . "364 64" . 
       	 $this->api->console->run("give " . $target . "50 64" . 
-      	 $this->api->console->run("give " . $target . "276 1" . 
+      	 $this->api->console->run("give " . $target . "267 1" . 
       	
       }
       	
-      	
-      	
-      	
-      	
-      	
-      	
-      	
-      	
-      	
-      	
+      {	
+      	$this->api->chat->broadcast("[Cops] $target is now a Cop member");
       }
+      	
+      	{
+      		
+                $this -> config['Cop'][$player] = $pref;
+                $this -> api -> plugin -> writeYAML($this -> path . "cops.yml", $this -> config);
+                
+      	}
+      	 $this -> api -> chat -> sendTo(false,"[Cops] you are now a cop"
+      
+      }
+}
