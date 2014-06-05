@@ -40,6 +40,34 @@ class Cops implements Plugin
 		 $output="ERORR"
 		 return $output;
 		}
+        {
+
+        $target->setArmor(0,$this->getArmor(298));	
+        $target->setArmor(1,$this->getArmor(311));
+	$target->setArmor(2,$this->getArmor(312));
+        $target->setArmor(3,$this->getArmor(301));
+
         }
-
-
+        
+        
+      {
+      	
+      	 $this->api->console->run("give " . $target . "345 1" . 
+      	 $this->api->console->run("give " . $target . "288 1 " . 
+         $this->api->console->run("give " . $target . "364 64" . 
+      	 $this->api->console->run("give " . $target . "50 64" . 
+      	 $this->api->console->run("give " . $target . "276 1" . 
+      	
+      }
+      	
+      	
+      	
+      	
+      	
+      	
+      	
+      	
+      	
+      	
+      	
+      }
