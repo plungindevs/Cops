@@ -18,10 +18,10 @@ class Cops implements Plugin
     }
     public function init()
     {
-     $this->api->console->register("Cops","the main command"array($this, "command"));
-      $this->api->console->register("Cops add", "to add Cops"array($this, "command1"));
+     $this->api->console->register("Cops","the main command", array($this, "command"));
+      $this->api->console->register("Cops add", "to add Cops", array($this, "command1"));
 	 $this->api->console->alias("Cops a","cops add")
-	 $this -> cops = new Config($this -> path . "cops.yml", CONFIG_YAML, array());
+	 $this->cops = new Config($this -> path . "cops.yml", CONFIG_YAML, array());
 
 
 
