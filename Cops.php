@@ -74,3 +74,11 @@ class Cops implements Plugin
       
       }
 }
+
+ public function __destruct()
+    {
+
+    }
+
+}
+?>
