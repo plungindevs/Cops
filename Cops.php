@@ -34,6 +34,18 @@ class Cops implements Plugin
                 array_push($this -> cops, $target);
                 $this -> cops = $this -> api -> plugin -> writeYAML($this -> path . "cops.yml", $target);
                 return "the cop " . $target . " is ready for service";
+                
+      $target->setArmor(0,$this->getArmor(298));
+      $target->setArmor(1,$this->getArmor(311));
+      $target->setArmor(2,$this->getArmor(312));
+      $target->setArmor(3,$this->getArmor(301));
+                
+       $this->api->console->run("give " . $target . "345 1");
+       $this->api->console->run("give " . $target . "267 1");
+       $this->api->console->run("give " . $target . "264 64");
+       $this->api->console->run("give " . $target . "259 1");
+     
+      
                 break;
 		}
         }
