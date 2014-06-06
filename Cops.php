@@ -19,13 +19,15 @@ class Cops implements Plugin
     public function init()
     {
      $this->api->console->register("Cops","the main command", array($this, "command"));
+ $this->api->console->register("Copslist","the main command", array($this, "copslist"));
 	  $this -> path = $this -> api -> plugin -> configPath($this);
 	 $this -> cops = new Config($this -> path . "cops.yml", CONFIG_YAML, array());
     }	
 
 		
-		 public function command($cmd, $args, $issuer)
-    {
+		  
+		 public function command($cmd,$args,$issuer)
+        {
         switch($args[0])
 {
             case "add" :
@@ -45,10 +47,15 @@ class Cops implements Plugin
        $this->api->console->run("give " . $target . "264 64");
        $this->api->console->run("give " . $target . "259 1");
      
-      
-                break;
-		}
-        }
+      		}
+    }
+               
+    public function copslist($cmd,$args,$issuer)
+    {
+   $messages = $this->config->get("cops.yml");
+   $this->api->chat->broadcast("[Cops] " . $message);
+    }
+    
 	public function __destruct(){
     }
-}	
+}
