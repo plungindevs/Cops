@@ -11,7 +11,7 @@ __PocketMine Plugin__
 
 class Cops implements Plugin
 {
-    private $api;
+    private $api,$path,$config,$prefix;
     public function __construct(ServerAPI $api, $server = false)
     {
         $this->api = $api;
@@ -21,7 +21,7 @@ class Cops implements Plugin
      $this->api->console->register("Cops","the main command", array($this, "command"));
  $this->api->console->register("Copslist","the main command", array($this, "copslist"));
 	  $this -> path = $this -> api -> plugin -> configPath($this);
-	 $this -> cops = new Config($this -> path . "cops.yml", CONFIG_YAML, array());
+	 
     }	
 
 		
@@ -44,18 +44,13 @@ class Cops implements Plugin
                 
        $this->api->console->run("give " . $target . "345 1");
        $this->api->console->run("give " . $target . "267 1");
-       $this->api->console->run("give " . $target . "264 64");
+       $this->api->console->run("give " . $target . "364 64");
        $this->api->console->run("give " . $target . "259 1");
      
       		}
     }
                
-    public function copslist($cmd,$args,$issuer)
-    {
-   $messages = $this->config->get("cops.yml");
-   $this->api->chat->broadcast("[Cops] " . $message);
-    }
-    
+
 	public function __destruct(){
     }
 }
